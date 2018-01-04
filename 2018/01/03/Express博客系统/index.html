@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>No title | Null. | 善战者，不武。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="前言简单的Blog 源代码： GitHub 技术基础nodejs安装使用 MpngoDB安装使用 ES6的基础 Express的使用12345678910111213// 简单路由var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;, function(req, res) &amp;#123;  res.send(&apos;hello,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://gavinluo.cn/blog/2018/01/03/Express博客系统/index.html">
+<meta property="og:site_name" content="Null.">
+<meta property="og:description" content="前言简单的Blog 源代码： GitHub 技术基础nodejs安装使用 MpngoDB安装使用 ES6的基础 Express的使用12345678910111213// 简单路由var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;, function(req, res) &amp;#123;  res.send(&apos;hello,">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-01-03T10:14:24.491Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="前言简单的Blog 源代码： GitHub 技术基础nodejs安装使用 MpngoDB安装使用 ES6的基础 Express的使用12345678910111213// 简单路由var express = require(&apos;express&apos;);var app = express();app.get(&apos;/&apos;, function(req, res) &amp;#123;  res.send(&apos;hello,">
+    
+        <link rel="alternative" href="/atom.xml" title="Null." type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Shiming.Luo</h5>
+          <a href="mailto:gavinluo99@gmail.com" title="gavinluo99@gmail.com" class="mail">gavinluo99@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                新浪微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/gitfuck99" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                GitOschina(码云)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShimingLuo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/ShimingLuo99" target="_blank" >
+                <i class="icon icon-lg icon-facebook"></i>
+                FaceBook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">No title</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">No title</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-03T10:14:24.490Z" itemprop="datePublished" class="page-time">
+  2018-01-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#技术基础"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x6280;&#x672F;&#x57FA;&#x7840;" class="headerlink" title="&#x6280;&#x672F;&#x57FA;&#x7840;"></a>&#x6280;&#x672F;&#x57FA;&#x7840;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开发环境准备"><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x51C6;&#x5907;" class="headerlink" title="&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x51C6;&#x5907;"></a>&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x51C6;&#x5907;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开发"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#&#x5F00;&#x53D1;" class="headerlink" title="&#x5F00;&#x53D1;"></a>&#x5F00;&#x53D1;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部署"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#&#x90E8;&#x7F72;" class="headerlink" title="&#x90E8;&#x7F72;"></a>&#x90E8;&#x7F72;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#END"><span class="post-toc-number">6.</span> <span class="post-toc-text"><a href="#END" class="headerlink" title="END"></a>END</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Express博客系统"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">No title</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月03日 18:14" datetime="2018-01-03T10:14:24.490Z"  itemprop="datePublished">2018-01-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>简单的Blog</p>
+<p>源代码： <a href="https://github.com/ShimingLuo/node-blog-demo" target="_blank" rel="noopener">GitHub</a></p>
+<h1 id="技术基础"><a href="#技术基础" class="headerlink" title="技术基础"></a>技术基础</h1><p>nodejs安装使用</p>
+<p>MpngoDB安装使用</p>
+<p>ES6的基础</p>
+<p>Express的使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 简单路由</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'hello, express'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/users/:name'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">'hello, '</span> + req.params.name);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
+<p>supervisor自动重启服务工具<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">$ npm install -g supervisor</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">$ supervisor --harmony index</span><br></pre></td></tr></table></figure></p>
+<p>ejs模板引擎<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i ejs --save</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> indexRouter = <span class="built_in">require</span>(<span class="string">'./routes/index'</span>);</span><br><span class="line"><span class="keyword">var</span> userRouter = <span class="built_in">require</span>(<span class="string">'./routes/users'</span>);</span><br><span class="line"></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));<span class="comment">// 设置存放模板文件的目录</span></span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>);<span class="comment">// 设置模板引擎为 ejs</span></span><br><span class="line"></span><br><span class="line">app.use(<span class="string">'/'</span>, indexRouter);</span><br><span class="line">app.use(<span class="string">'/users'</span>, userRouter);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
+<h1 id="开发环境准备"><a href="#开发环境准备" class="headerlink" title="开发环境准备"></a>开发环境准备</h1><p>初始化项目文件夹<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure></p>
+<p>安装需要的模块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">模块的用处：</span><br><span class="line">express: web 框架</span><br><span class="line">express-session: session 中间件</span><br><span class="line">connect-mongo: 将 session 存储于 mongodb，结合 express-session 使用</span><br><span class="line">connect-flash: 页面通知提示的中间件，基于 session 实现</span><br><span class="line">ejs: 模板</span><br><span class="line">express-formidable: 接收表单及文件的上传中间件</span><br><span class="line">config-lite: 读取配置文件</span><br><span class="line">marked: markdown 解析</span><br><span class="line">moment: 时间格式化</span><br><span class="line">mongolass: mongodb 驱动</span><br><span class="line">objectid-to-timestamp: 根据 ObjectId 生成时间戳</span><br><span class="line">sha1: sha1 加密，用于密码加密</span><br><span class="line">winston: 日志</span><br><span class="line">express-winston: 基于 winston 的用于 express 的日志中间件</span><br></pre></td></tr></table></figure></p>
+<p>配置文件:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ./config/default.js */</span>  </span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 程序启动要监听端口号</span></span><br><span class="line">    port: <span class="number">3000</span>,</span><br><span class="line">    <span class="comment">// express-session 的配置信息</span></span><br><span class="line">    session: &#123;</span><br><span class="line">        secret: <span class="string">'myblog'</span>,</span><br><span class="line">        key: <span class="string">'myblog'</span>,</span><br><span class="line">        maxAge: <span class="number">2592000000</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// mongoDB 的地址，blog 为 DB 名</span></span><br><span class="line">    mongodb: <span class="string">'mongodb://localhost:27017/blog'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><blockquote>
+<p>精简代码解释</p>
+</blockquote>
+<p>数据库链接，及表的模型设计</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数据库连接</span></span><br><span class="line"><span class="keyword">var</span> config = <span class="built_in">require</span>(<span class="string">'config-lite'</span>)(__dirname);</span><br><span class="line"><span class="keyword">var</span> Mongolass = <span class="built_in">require</span>(<span class="string">'mongolass'</span>);</span><br><span class="line"><span class="keyword">var</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>); <span class="comment">// 格式化时间</span></span><br><span class="line"><span class="keyword">var</span> objectIdToTimestamp = <span class="built_in">require</span>(<span class="string">'objectid-to-timestamp'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mongolass = <span class="keyword">new</span> Mongolass();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据 id 生成创建时间 created_at</span></span><br><span class="line">mongolass.plugin(<span class="string">'addCreatedAt'</span>, &#123;</span><br><span class="line">    afterFind: <span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>&#123;</span><br><span class="line">        results.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">            item.created_at = moment(objectIdToTimestamp(item._id)).format(<span class="string">'YYYY-MM-DD HH:mm'</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> results;</span><br><span class="line">    &#125;,</span><br><span class="line">    afterFindOne: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (result) &#123;</span><br><span class="line">            result.created_at = moment(objectIdToTimestamp(result._id)).format(<span class="string">'YYYY-MM-DD HH:mm'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 链接数据库</span></span><br><span class="line">mongolass.connect(config.mongodb);</span><br><span class="line"></span><br><span class="line"><span class="comment">// User 模型</span></span><br><span class="line">exports.User = mongolass.model(<span class="string">'User'</span>, &#123;</span><br><span class="line">    name: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;,</span><br><span class="line">    password: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;,</span><br><span class="line">    avatar: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;,</span><br><span class="line">    gender: &#123;<span class="attr">type</span>: <span class="string">'string'</span>, <span class="attr">enum</span>: [<span class="string">'m'</span>, <span class="string">'f'</span>, <span class="string">'x'</span>]&#125;,</span><br><span class="line">    bio: &#123;<span class="attr">type</span>: <span class="string">'string'</span>&#125;</span><br><span class="line">&#125;);</span><br><span class="line">exports.User.index(&#123;<span class="attr">name</span>: <span class="number">1</span>&#125;, &#123;<span class="attr">unique</span>: <span class="literal">true</span>&#125;).exec(); <span class="comment">// 根据用户名找到用户，用户名全局唯一</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文章模型</span></span><br><span class="line">exports.Post = mongolass.model(<span class="string">'Post'</span>, &#123;</span><br><span class="line">    author: &#123; <span class="attr">type</span>: Mongolass.Types.ObjectId &#125;,</span><br><span class="line">    title: &#123; <span class="attr">type</span>: <span class="string">'string'</span> &#125;,</span><br><span class="line">    content: &#123; <span class="attr">type</span>: <span class="string">'string'</span> &#125;,</span><br><span class="line">    pv: &#123; <span class="attr">type</span>: <span class="string">'number'</span> &#125;</span><br><span class="line">&#125;);</span><br><span class="line">exports.Post.index(&#123;<span class="attr">author</span>: <span class="number">1</span>, <span class="attr">_id</span>: <span class="number">-1</span>&#125;).exec();<span class="comment">// 按创建时间降序查看用户的文章列表，author升序、_id降序</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 留言模型</span></span><br><span class="line">exports.Comment = mongolass.model(<span class="string">'Comment'</span>, &#123;</span><br><span class="line">    author: &#123; <span class="attr">type</span>: Mongolass.Types.ObjectId &#125;,</span><br><span class="line">    content: &#123; <span class="attr">type</span>: <span class="string">'string'</span> &#125;,</span><br><span class="line">    postId: &#123; <span class="attr">type</span>: Mongolass.Types.ObjectId &#125;</span><br><span class="line">&#125;);</span><br><span class="line">exports.Comment.index(&#123; <span class="attr">postId</span>: <span class="number">1</span>, <span class="attr">_id</span>: <span class="number">1</span> &#125;).exec(); <span class="comment">// 通过文章 id 获取该文章下所有留言，按留言创建时间升序</span></span><br><span class="line">exports.Comment.index(&#123; <span class="attr">author</span>: <span class="number">1</span>, <span class="attr">_id</span>: <span class="number">1</span> &#125;).exec(); <span class="comment">// 通过用户 id 和留言 id 删除一个留言</span></span><br></pre></td></tr></table></figure>
+<p>用户的Module接口设计处理<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> &#123; User &#125; = <span class="built_in">require</span>(<span class="string">'../lib/mongo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">// 注册用户</span></span><br><span class="line">    create: <span class="function"><span class="keyword">function</span>(<span class="params">user</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> User.create(user).exec();</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 根据用户名获取用户信息</span></span><br><span class="line">    getUserByName: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> User.findOne(&#123; <span class="attr">name</span>: name &#125;).addCreatedAt().exec();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>开发过程中，每次修改需要重启，很是麻烦，可以使用 supervisor<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装</span><br><span class="line">npm install -s supervisor</span><br><span class="line"></span><br><span class="line"># 监听文件修改后，自动重启服务器</span><br><span class="line">supervisor --harmony index.js</span><br></pre></td></tr></table></figure></p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>申请线上 MongoDB 数据存储服务。<a href="https://mlab.com/" target="_blank" rel="noopener">MLab</a></p>
+<p>申请成功，并创建数据库厚，添加新的配置文件，production.js，使用，NODE_ENV=production 设置配置文件。</p>
+<blockquote>
+<p>windows 下，全局安装 cross-env 模块， cross-env NODE_ENV=production ……</p>
+</blockquote>
+<p>完成后，开始部署服务器（CentOS 64位）</p>
+<p>安装环境<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">yum install git <span class="comment">#安装git</span></span><br><span class="line">yum install nodejs <span class="comment">#安装 Node.js</span></span><br><span class="line">yum install npm <span class="comment">#安装 npm</span></span><br><span class="line"></span><br><span class="line">npm i npm -g <span class="comment">#升级 npm</span></span><br><span class="line">npm i pm2 -g <span class="comment">#安装 pm2</span></span><br><span class="line">npm i n -g <span class="comment">#安装 n</span></span><br><span class="line"><span class="comment"># n v6.9.1 #安装 v6.9.1 版本的 Node.js</span></span><br><span class="line"><span class="comment"># n use 6.9.1 #使用 v6.9.1 版本的 Node.js</span></span><br><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个时候，有可能安装都不成功哦。比如我的ContOS就是，安装Node不成功，当时是修改咯Node的源成功的</p>
+</blockquote>
+<p>当然，安装 pm2 的时候成功咯，但是，使用时， pm2 -v 报错？？？没有命令，我就懵逼咯当时。</p>
+<p>强行使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># linux下</span></span><br><span class="line"><span class="built_in">which</span> node</span><br><span class="line"></span><br><span class="line"><span class="comment"># windows下</span></span><br><span class="line"><span class="built_in">where</span> node</span><br></pre></td></tr></table></figure></p>
+<p>查看一哈，node的路径，然后并看不出来什么，因为，是快捷方式</p>
+<p>cd 到那个目录下后，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l</span><br></pre></td></tr></table></figure></p>
+<p>，看到指向咯，真实的node安装地址，cd 到目录下后，惊呆咯。</p>
+<p>安装的都在，访问也能成功，看来是环境变量出问题咯。</p>
+<p>原因是我的，node、npm 都是采用离线安装，然后直接用快捷方式放到 bin/ 下，所有没有配置环境变量。</p>
+<p>没办法，自己设置咯。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置只有当前用户生效的环境配置</span></span><br><span class="line">vim ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在path=。。。后面添加需要添加环境变量目录</span></span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/src/node-v8.4.0-linux-x86/bin</span><br></pre></td></tr></table></figure></p>
+<p>到此，应该都是成功的咯。</p>
+<p>将代码从Git上拉下来，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line"></span><br><span class="line">npm start</span><br><span class="line"></span><br><span class="line">pm2 logs</span><br><span class="line"></span><br><span class="line"># pm2 mont</span><br></pre></td></tr></table></figure></p>
+<p>访问。</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-03T10:14:24.491Z" itemprop="dateUpdated">2018年1月3日 18:14</time>
+</span><br>
+
+
+        所属：<a href="/blog/2018/01/03/Express博客系统/" target="_blank" rel="external">http://gavinluo.cn/blog/2018/01/03/Express博客系统/</a>
+    </div>
+    <footer>
+        <a href="http://gavinluo.cn/blog">
+            <img src="/blog/img/avatar.jpg" alt="Shiming.Luo">
+            Shiming.Luo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&title=《No title》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&title=《No title》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Express博客系统/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Null.&url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/03/网页截图工具-Pageres/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">No title</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/03/VUE初体验/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">VUE初体验</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Null. &copy; 2017 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&title=《No title》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&title=《No title》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Express博客系统/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Null.&url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Express博客系统/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aMW7DMAwF0N7/0u7aoVY/SaeApacpSBzbTwNBkfz6itf1Y62/ufv17p7rpzy8MDAwXsu4lmt9zd2v82fl12NgYJzDWAfEJAiur8+3JnkuBgYGxoQRBcciFQMDA6PKqAbH/G759mFgYJzJqKZo63BZRU7SRwwMjBMYedX9/z9/pL+BgYHxKsZVXNX/VtuZvYWBgbE3Y1JKq145KcMlSSQGBsaujMmgQ/IqvcZnNVhjYGCcwMgLapPQmSSaeePhl4CLgYGxKSMB5Det/nc+bIGBgXECIz9k5qW3Z4N1UubDwMA4gZEfI3uYnFRNKAsPxsDAeC2jd+u8fJaMkT010oGBgbErIy9+VQ+f1U2ppol/pIYYGBgbMXpDFeVErXWUzTcFAwNjb0Z1tOJZarVhUJ7XwMDA2Igx6n/G5+Pq8ER5ZgQDA2NTRpKu5WMWvVGw6sG4mXViYGC8llFtN86D7PzX2yCLgYGxKSM/UiYH2rzZOWkYjOZHMDAwXsvoDXLlRfzqsEWejEbtAQwMjO0YvYNodUQjTyvLp3AMDIxjGL3CfX7PSUJ5+w0GBsamjKu4JvX5XvOykBRiYGBsypg0OHuvnmxQD4+BgbE3ozdgMRkRS4p35YIdBgbGAYwk1esVxebgBImBgYExGRfrNR4+2BjAwMA4gJEnkb1AnG/WKOBiYGC8kFEdVJ23OQtpX7IFGBgYWzN6edfDR9DWm2BgYBzA+AauaNsZIrrS+QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '看不懂？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '懂了？';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

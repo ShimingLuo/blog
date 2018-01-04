@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>No title | Null. | 善战者，不武。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="基础篇项目一：网站信息爬虫 实现一个网站信息爬虫，学习使用Nodejs中的HTTP模块及信息提取方法。 项目二：在线笔记 课程实现一个简易的在线笔记网站，涉及到 NodeJS基础知识及Express框架。 项目三：漂流瓶 实现一个简单的漂流瓶应用，主要学习NodeJS整合Redis的使用。 进阶篇项目四：在线聊天室 实现在线聊天室应用，涉及NodeJS、socket.io、Angular.js相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/index.html">
+<meta property="og:site_name" content="Null.">
+<meta property="og:description" content="基础篇项目一：网站信息爬虫 实现一个网站信息爬虫，学习使用Nodejs中的HTTP模块及信息提取方法。 项目二：在线笔记 课程实现一个简易的在线笔记网站，涉及到 NodeJS基础知识及Express框架。 项目三：漂流瓶 实现一个简单的漂流瓶应用，主要学习NodeJS整合Redis的使用。 进阶篇项目四：在线聊天室 实现在线聊天室应用，涉及NodeJS、socket.io、Angular.js相关">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-01-03T10:14:24.427Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="基础篇项目一：网站信息爬虫 实现一个网站信息爬虫，学习使用Nodejs中的HTTP模块及信息提取方法。 项目二：在线笔记 课程实现一个简易的在线笔记网站，涉及到 NodeJS基础知识及Express框架。 项目三：漂流瓶 实现一个简单的漂流瓶应用，主要学习NodeJS整合Redis的使用。 进阶篇项目四：在线聊天室 实现在线聊天室应用，涉及NodeJS、socket.io、Angular.js相关">
+    
+        <link rel="alternative" href="/atom.xml" title="Null." type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Shiming.Luo</h5>
+          <a href="mailto:gavinluo99@gmail.com" title="gavinluo99@gmail.com" class="mail">gavinluo99@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                新浪微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/gitfuck99" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                GitOschina(码云)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShimingLuo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/ShimingLuo99" target="_blank" >
+                <i class="icon icon-lg icon-facebook"></i>
+                FaceBook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-03T10:14:24.427Z" itemprop="datePublished" class="page-time">
+  2018-01-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础篇"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x57FA;&#x7840;&#x7BC7;" class="headerlink" title="&#x57FA;&#x7840;&#x7BC7;"></a>&#x57FA;&#x7840;&#x7BC7;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进阶篇"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x8FDB;&#x9636;&#x7BC7;" class="headerlink" title="&#x8FDB;&#x9636;&#x7BC7;"></a>&#x8FDB;&#x9636;&#x7BC7;</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Node-JS学习的5个经典项目"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月03日 18:14" datetime="2018-01-03T10:14:24.427Z"  itemprop="datePublished">2018-01-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><p><strong>项目一：网站信息爬虫</strong></p>
+<p>实现一个网站信息爬虫，学习使用Nodejs中的HTTP模块及信息提取方法。</p>
+<p><strong>项目二：在线笔记</strong></p>
+<p>课程实现一个简易的在线笔记网站，涉及到 NodeJS基础知识及Express框架。</p>
+<p><strong>项目三：漂流瓶</strong></p>
+<p>实现一个简单的漂流瓶应用，主要学习NodeJS整合Redis的使用。</p>
+<h1 id="进阶篇"><a href="#进阶篇" class="headerlink" title="进阶篇"></a>进阶篇</h1><p><strong>项目四：在线聊天室</strong></p>
+<p>实现在线聊天室应用，涉及NodeJS、socket.io、Angular.js相关技术。</p>
+<p><strong>项目五：个人博客</strong></p>
+<p>实现多人博客系统，其中会学习使用 NodeJS基础知识、mongoDB数据库和Express框架开发。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-03T10:14:24.427Z" itemprop="dateUpdated">2018年1月3日 18:14</time>
+</span><br>
+
+
+        所属：<a href="/blog/2018/01/03/Node-JS学习的5个经典项目/" target="_blank" rel="external">http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/</a>
+    </div>
+    <footer>
+        <a href="http://gavinluo.cn/blog">
+            <img src="/blog/img/avatar.jpg" alt="Shiming.Luo">
+            Shiming.Luo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&title=Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&title=Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Null.&url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/03/NodeJs-Hello-World/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Node版Hello World</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/03/审核简历的一点点想法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">审核简历的一点点想法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Null. &copy; 2017 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&title=《No title》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&title=《No title》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Null.&url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Node-JS学习的5个经典项目/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3awW4iMRAEUP7/pxMpp0gwUNW2IZHenBDZnfGbg7sp9+0WX18/1+/P99/kd0juf/+s5CnDCw8PD2+09KvrOenqkfffX/37HPCcfXkHPDw8vGO8fLOebd/J0nN88RQ8PDy8j/KeL2KlMORdMR4eHt5/5CW/95NlteUEDw8P76/xkjCibbXb1rn9vDlrwcPDw4t5swOwz34+fr6Hh4eHNzpVz6+2JMw28XpVeHh4eAd4s7g2b6NbfBuIRK8YDw8Pbyvv+X9IwtkkLJh9077oFykLHh4e3ibe7Af/yjDW+hFaGxDj4eHhneOtBxCzsYAE0x6/XTbWeHh4eJt4+YLyYtAWibZlb8fC8PDw8E7wcmp+0NUGB+3xGB4eHt77ee0W3MLa17cSCj9g4+Hh4R3g5TfKx6faWnSufcfDw8M7wWt/6udloI1ukxg3/yseHh7eOV5+wp68gpY3GyxoV4KHh4d3mtcuOn8psza9DZRfnO/h4eHhbeLl4WwyCjB7BUmzPgt88fDw8E7wZsf2eQlpRxDy4CNv/fHw8PD28pJNfxbItuC2Xa4DXDw8PLxlXrtlt6WiqEvlGEE9U4aHh4d3gJfEr+2WXdeouFxFJQoPDw/vAG8Ws7aMlU0/xyyNW+Hh4eHFvHw0ajZk0AYQK+31ZUnAw8PD28prSfkYQdtGrw8i4OHh4b2Ht2tYav0IbVaKXpQfPDw8vAO8pBWehaoto301+crx8PDw9vK+yms2IpBg2jijyFrw8PDwtvJmo1R5tWmHA1bi2lk5wcPDw5vx8pY3eVjeLrcHY/na6swDDw8Pb8TLB6GSxjcvM/kh2XDUAA8PD+9P8tqwIA9wZ4dtD1pqPDw8vA/x9h7/r7fyURXAw8PDO8bLHzM7Klu5f9usL8W4eHh4eKPRq5X4YPZNG3CsxMF4eHh4C7xvd9ZpzqL6cHYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '看不懂？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '懂了？';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>No title | Null. | 善战者，不武。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="云储存七牛：官网 HTML5 可视化设计工具Maqetta：官网 前端Router：fd-router.js：GitHub director.js：GitHub path.js：GitHub vipspa.js（移动端纯前端路由方案）：GitHub Loading插件jquery.blockUI.js：官网DOC、GitHub 文件上传jQuery.MultiFile.js：官网、GitHub 表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://gavinluo.cn/blog/2018/01/03/Font-End/index.html">
+<meta property="og:site_name" content="Null.">
+<meta property="og:description" content="云储存七牛：官网 HTML5 可视化设计工具Maqetta：官网 前端Router：fd-router.js：GitHub director.js：GitHub path.js：GitHub vipspa.js（移动端纯前端路由方案）：GitHub Loading插件jquery.blockUI.js：官网DOC、GitHub 文件上传jQuery.MultiFile.js：官网、GitHub 表">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-01-03T10:14:24.469Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="云储存七牛：官网 HTML5 可视化设计工具Maqetta：官网 前端Router：fd-router.js：GitHub director.js：GitHub path.js：GitHub vipspa.js（移动端纯前端路由方案）：GitHub Loading插件jquery.blockUI.js：官网DOC、GitHub 文件上传jQuery.MultiFile.js：官网、GitHub 表">
+    
+        <link rel="alternative" href="/atom.xml" title="Null." type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Shiming.Luo</h5>
+          <a href="mailto:gavinluo99@gmail.com" title="gavinluo99@gmail.com" class="mail">gavinluo99@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                新浪微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/gitfuck99" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                GitOschina(码云)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShimingLuo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/ShimingLuo99" target="_blank" >
+                <i class="icon icon-lg icon-facebook"></i>
+                FaceBook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-03T10:14:24.468Z" itemprop="datePublished" class="page-time">
+  2018-01-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#云储存"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x4E91;&#x50A8;&#x5B58;" class="headerlink" title="&#x4E91;&#x50A8;&#x5B58;"></a>&#x4E91;&#x50A8;&#x5B58;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HTML5-可视化设计工具"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#HTML5-&#x53EF;&#x89C6;&#x5316;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;" class="headerlink" title="HTML5 &#x53EF;&#x89C6;&#x5316;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;"></a>HTML5 &#x53EF;&#x89C6;&#x5316;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前端Router："><span class="post-toc-number">3.</span> <span class="post-toc-text"><a href="#&#x524D;&#x7AEF;Router&#xFF1A;" class="headerlink" title="&#x524D;&#x7AEF;Router&#xFF1A;"></a>&#x524D;&#x7AEF;Router&#xFF1A;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Loading插件"><span class="post-toc-number">4.</span> <span class="post-toc-text"><a href="#Loading&#x63D2;&#x4EF6;" class="headerlink" title="Loading&#x63D2;&#x4EF6;"></a>Loading&#x63D2;&#x4EF6;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文件上传"><span class="post-toc-number">5.</span> <span class="post-toc-text"><a href="#&#x6587;&#x4EF6;&#x4E0A;&#x4F20;" class="headerlink" title="&#x6587;&#x4EF6;&#x4E0A;&#x4F20;"></a>&#x6587;&#x4EF6;&#x4E0A;&#x4F20;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#表单异步提交"><span class="post-toc-number">6.</span> <span class="post-toc-text"><a href="#&#x8868;&#x5355;&#x5F02;&#x6B65;&#x63D0;&#x4EA4;" class="headerlink" title="&#x8868;&#x5355;&#x5F02;&#x6B65;&#x63D0;&#x4EA4;"></a>&#x8868;&#x5355;&#x5F02;&#x6B65;&#x63D0;&#x4EA4;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间格式解析与显示"><span class="post-toc-number">7.</span> <span class="post-toc-text"><a href="#&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x89E3;&#x6790;&#x4E0E;&#x663E;&#x793A;" class="headerlink" title="&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x89E3;&#x6790;&#x4E0E;&#x663E;&#x793A;"></a>&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x89E3;&#x6790;&#x4E0E;&#x663E;&#x793A;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组织架构图插件"><span class="post-toc-number">8.</span> <span class="post-toc-text"><a href="#&#x7EC4;&#x7EC7;&#x67B6;&#x6784;&#x56FE;&#x63D2;&#x4EF6;" class="headerlink" title="&#x7EC4;&#x7EC7;&#x67B6;&#x6784;&#x56FE;&#x63D2;&#x4EF6;"></a>&#x7EC4;&#x7EC7;&#x67B6;&#x6784;&#x56FE;&#x63D2;&#x4EF6;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ajax模拟数据返回"><span class="post-toc-number">9.</span> <span class="post-toc-text"><a href="#Ajax&#x6A21;&#x62DF;&#x6570;&#x636E;&#x8FD4;&#x56DE;" class="headerlink" title="Ajax&#x6A21;&#x62DF;&#x6570;&#x636E;&#x8FD4;&#x56DE;"></a>Ajax&#x6A21;&#x62DF;&#x6570;&#x636E;&#x8FD4;&#x56DE;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型设计工具"><span class="post-toc-number">10.</span> <span class="post-toc-text"><a href="#&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;" class="headerlink" title="&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;"></a>&#x539F;&#x578B;&#x8BBE;&#x8BA1;&#x5DE5;&#x5177;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NPM自由镜像源切换，管理工具"><span class="post-toc-number">11.</span> <span class="post-toc-text"><a href="#NPM&#x81EA;&#x7531;&#x955C;&#x50CF;&#x6E90;&#x5207;&#x6362;&#xFF0C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;" class="headerlink" title="NPM&#x81EA;&#x7531;&#x955C;&#x50CF;&#x6E90;&#x5207;&#x6362;&#xFF0C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;"></a>NPM&#x81EA;&#x7531;&#x955C;&#x50CF;&#x6E90;&#x5207;&#x6362;&#xFF0C;&#x7BA1;&#x7406;&#x5DE5;&#x5177;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#———–"><span class="post-toc-number">12.</span> <span class="post-toc-text"><a href="#&#x2014;&#x2014;&#x2014;&#x2013;" class="headerlink" title="&#x2014;&#x2014;&#x2014;&#x2013;"></a>&#x2014;&#x2014;&#x2014;&#x2013;</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Font-End"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月03日 18:14" datetime="2018-01-03T10:14:24.468Z"  itemprop="datePublished">2018-01-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="云储存"><a href="#云储存" class="headerlink" title="云储存"></a>云储存</h3><p>七牛：<a href="https://portal.qiniu.com/signin" target="_blank" rel="noopener">官网</a></p>
+<h3 id="HTML5-可视化设计工具"><a href="#HTML5-可视化设计工具" class="headerlink" title="HTML5 可视化设计工具"></a>HTML5 可视化设计工具</h3><p>Maqetta：<a href="http://maqetta.org/" target="_blank" rel="noopener">官网</a></p>
+<h3 id="前端Router："><a href="#前端Router：" class="headerlink" title="前端Router："></a>前端Router：</h3><p>fd-router.js：<a href="https://github.com/jnoodle/fd-router" target="_blank" rel="noopener">GitHub</a></p>
+<p>director.js：<a href="https://github.com/flatiron/director" target="_blank" rel="noopener">GitHub</a></p>
+<p>path.js：<a href="https://github.com/mtrpcic/pathjs" target="_blank" rel="noopener">GitHub</a></p>
+<p>vipspa.js（移动端纯前端路由方案）：<a href="https://github.com/wikieswan/vipspa" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="Loading插件"><a href="#Loading插件" class="headerlink" title="Loading插件"></a>Loading插件</h3><p>jquery.blockUI.js：<a href="http://jquery.malsup.com/block/#options" target="_blank" rel="noopener">官网DOC</a>、<a href="https://github.com/malsup/blockui/" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>jQuery.MultiFile.js：<a href="http://www.fyneworks.com/jquery/multifile/" target="_blank" rel="noopener">官网</a>、<a href="https://github.com/fyneworks/multifile" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="表单异步提交"><a href="#表单异步提交" class="headerlink" title="表单异步提交"></a>表单异步提交</h3><p>jQuery.form.js：<a href="http://jquery.malsup.com/form/" target="_blank" rel="noopener">官网</a>、<a href="https://github.com/jquery-form/form" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="时间格式解析与显示"><a href="#时间格式解析与显示" class="headerlink" title="时间格式解析与显示"></a>时间格式解析与显示</h3><p>moment.js：<a href="http://momentjs.com/" target="_blank" rel="noopener">官网</a>、<a href="https://github.com/moment/moment/" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="组织架构图插件"><a href="#组织架构图插件" class="headerlink" title="组织架构图插件"></a>组织架构图插件</h3><p>OrgChart（jq3.0+）：<a href="https://github.com/dabeng/OrgChart" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="Ajax模拟数据返回"><a href="#Ajax模拟数据返回" class="headerlink" title="Ajax模拟数据返回"></a>Ajax模拟数据返回</h3><p>Mock.js：<a href="http://mockjs.com/" target="_blank" rel="noopener">官网</a>、<a href="https://github.com/nuysoft/Mock/tree/refactoring" target="_blank" rel="noopener">GitHub</a></p>
+<h3 id="原型设计工具"><a href="#原型设计工具" class="headerlink" title="原型设计工具"></a>原型设计工具</h3><p>Mockplus：<a href="https://www.mockplus.cn/" target="_blank" rel="noopener">官网</a></p>
+<p>MockingBot：<a href="https://modao.cc/" target="_blank" rel="noopener">官网</a></p>
+<h3 id="NPM自由镜像源切换，管理工具"><a href="#NPM自由镜像源切换，管理工具" class="headerlink" title="NPM自由镜像源切换，管理工具"></a>NPM自由镜像源切换，管理工具</h3><p>nrm：<a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">GitHub</a>、<a href="http://yijiebuyi.com/blog/4ef268db0dcfd2a42ad138a1a054bf0b.html" target="_blank" rel="noopener">使用</a></p>
+<h3 id="———–"><a href="#———–" class="headerlink" title="———–"></a>———–</h3>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-03T10:14:24.469Z" itemprop="dateUpdated">2018年1月3日 18:14</time>
+</span><br>
+
+
+        所属：<a href="/blog/2018/01/03/Font-End/" target="_blank" rel="external">http://gavinluo.cn/blog/2018/01/03/Font-End/</a>
+    </div>
+    <footer>
+        <a href="http://gavinluo.cn/blog">
+            <img src="/blog/img/avatar.jpg" alt="Shiming.Luo">
+            Shiming.Luo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Font-End/&title=Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Font-End/&title=Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Font-End/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Null.&url=http://gavinluo.cn/blog/2018/01/03/Font-End/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Font-End/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/03/jQuery-鼠标经过事件（hover）事件的延时处理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/03/小程序开发教程/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Null. &copy; 2017 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/03/Font-End/&title=《No title》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/03/Font-End/&title=《No title》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/03/Font-End/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Null.&url=http://gavinluo.cn/blog/2018/01/03/Font-End/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/03/Font-End/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aS27DMAwFwNz/0u42QArhkbQXlkarok1jjRcEf59PfK6f8/379efX31n9r9HBwMB4LeNanvVn1pjkKb/fkDz3nydiYGAcwFgHxOQxSdCsXjH5HgwMDIxqQEyoSWjGwMDAmDN64TIJ0BgYGBiTInbSLMv/+ngtjoGB8ULGJF17+udH5hsYGBivYlzFkwfHXri8WgcDA2NvxmQAOW/MFQrUJNHEwMDYlNFrouVtsqTgnAxEy3NRDAyMFzLyMWTSYqsmi+uLlseiGBgYmzLmzfoqMhlMVstdDAyMvRnVAnLSLEvCaF4wY2BgnMPIE7LJu+mF3dG7x8DA2IiRtMDydDAJtdWwm699YGBg7M1oForFNbJe0lnuGmJgYGzHyJceJmPIXlutkIZiYGBszagmhflCRi/I5qRR+YqBgfEqxr3DxerQsQoopIYYGBibMqrBNB8b5Alis4TGwMDYmpHnj2vGE227pLTGwMA4h9ELhdU2XD7mnJfHGBgY+zF6bbJq+EtSzNFLxMDAOIbRa5/lF+phorthYGAcw6iuPlSLzMLCRLV8xcDA2JTRGwxMytHkxVVDMwYGxt6MarC7a8FifaF54oiBgbEfo1pq5q23XiKY3wEDA+M0Rm8AkDMm08bo1WBgYGCMVy56SWSh9YaBgYExD4iDlDFqAmJgYBzAqK6N3rXkOgm4GBgY5zCqiw6TVYz8EklJjIGBcQDjDzmuk2HhrM8XAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '看不懂？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '懂了？';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
