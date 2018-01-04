@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>前端自动化构建工具--GulpJs的使用介绍 | Null. | 善战者，不武。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="前言GulpJs是一个前端自动化构建工具，与GruntJs相比，GulpJs无需繁杂的 配置参数，API简单易用，学习成本低。并依赖NodeJs的读取操作接口执行速度更快。适合新手没有学习过自动化构建工具的开发者。 正文1、Gulp的安装确保已经安装Node、npm最新版，然后全局安装Gulp 1npm install -g gulp 全局安装完成后，还需要在相应的项目中单独安装一次，并安装为项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端自动化构建工具--GulpJs的使用介绍">
+<meta property="og:url" content="http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/index.html">
+<meta property="og:site_name" content="Null.">
+<meta property="og:description" content="前言GulpJs是一个前端自动化构建工具，与GruntJs相比，GulpJs无需繁杂的 配置参数，API简单易用，学习成本低。并依赖NodeJs的读取操作接口执行速度更快。适合新手没有学习过自动化构建工具的开发者。 正文1、Gulp的安装确保已经安装Node、npm最新版，然后全局安装Gulp 1npm install -g gulp 全局安装完成后，还需要在相应的项目中单独安装一次，并安装为项目">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-01-04T03:12:54.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端自动化构建工具--GulpJs的使用介绍">
+<meta name="twitter:description" content="前言GulpJs是一个前端自动化构建工具，与GruntJs相比，GulpJs无需繁杂的 配置参数，API简单易用，学习成本低。并依赖NodeJs的读取操作接口执行速度更快。适合新手没有学习过自动化构建工具的开发者。 正文1、Gulp的安装确保已经安装Node、npm最新版，然后全局安装Gulp 1npm install -g gulp 全局安装完成后，还需要在相应的项目中单独安装一次，并安装为项目">
+    
+        <link rel="alternative" href="/atom.xml" title="Null." type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Shiming.Luo</h5>
+          <a href="mailto:gavinluo99@gmail.com" title="gavinluo99@gmail.com" class="mail">gavinluo99@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                新浪微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/gitfuck99" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                GitOschina(码云)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShimingLuo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/ShimingLuo99" target="_blank" >
+                <i class="icon icon-lg icon-facebook"></i>
+                FaceBook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端自动化构建工具--GulpJs的使用介绍</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端自动化构建工具--GulpJs的使用介绍</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-04T03:10:11.391Z" itemprop="datePublished" class="page-time">
+  2018-01-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Gulp/">Gulp</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text"><a href="#&#x524D;&#x8A00;" class="headerlink" title="&#x524D;&#x8A00;"></a>&#x524D;&#x8A00;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#正文"><span class="post-toc-number">2.</span> <span class="post-toc-text"><a href="#&#x6B63;&#x6587;" class="headerlink" title="&#x6B63;&#x6587;"></a>&#x6B63;&#x6587;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、Gulp的安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text"><a href="#1&#x3001;Gulp&#x7684;&#x5B89;&#x88C5;" class="headerlink" title="1&#x3001;Gulp&#x7684;&#x5B89;&#x88C5;"></a>1&#x3001;Gulp&#x7684;&#x5B89;&#x88C5;</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、开始使用Gulp"><span class="post-toc-number">2.2.</span> <span class="post-toc-text"><a href="#2&#x3001;&#x5F00;&#x59CB;&#x4F7F;&#x7528;Gulp" class="headerlink" title="2&#x3001;&#x5F00;&#x59CB;&#x4F7F;&#x7528;Gulp"></a>2&#x3001;&#x5F00;&#x59CB;&#x4F7F;&#x7528;Gulp</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-建立-gulpfile-js-文件"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text"><a href="#2-1-&#x5EFA;&#x7ACB;-gulpfile-js-&#x6587;&#x4EF6;" class="headerlink" title="2.1 &#x5EFA;&#x7ACB; gulpfile.js &#x6587;&#x4EF6;"></a>2.1 &#x5EFA;&#x7ACB; gulpfile.js &#x6587;&#x4EF6;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-运行-Gulp-任务"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text"><a href="#2-2-&#x8FD0;&#x884C;-Gulp-&#x4EFB;&#x52A1;" class="headerlink" title="2.2 &#x8FD0;&#x884C; Gulp &#x4EFB;&#x52A1;"></a>2.2 &#x8FD0;&#x884C; Gulp &#x4EFB;&#x52A1;</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、Gulp的API介绍"><span class="post-toc-number">2.3.</span> <span class="post-toc-text"><a href="#3&#x3001;Gulp&#x7684;API&#x4ECB;&#x7ECD;" class="headerlink" title="3&#x3001;Gulp&#x7684;API&#x4ECB;&#x7ECD;"></a>3&#x3001;Gulp&#x7684;API&#x4ECB;&#x7ECD;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-gulp-src"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text"><a href="#3-1-gulp-src" class="headerlink" title="3.1 gulp.src()"></a>3.1 gulp.src()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-gulp-dest"><span class="post-toc-number">2.3.2.</span> <span class="post-toc-text"><a href="#3-2-gulp-dest" class="headerlink" title="3.2 gulp.dest()"></a>3.2 gulp.dest()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-gulp-task"><span class="post-toc-number">2.3.3.</span> <span class="post-toc-text"><a href="#3-3-gulp-task" class="headerlink" title="3.3 gulp.task()"></a>3.3 gulp.task()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-4-gulp-watch"><span class="post-toc-number">2.3.4.</span> <span class="post-toc-text"><a href="#3-4-gulp-watch" class="headerlink" title="3.4 gulp.watch()"></a>3.4 gulp.watch()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4、常用的Gulp插件"><span class="post-toc-number">2.4.</span> <span class="post-toc-text"><a href="#4&#x3001;&#x5E38;&#x7528;&#x7684;Gulp&#x63D2;&#x4EF6;" class="headerlink" title="4&#x3001;&#x5E38;&#x7528;&#x7684;Gulp&#x63D2;&#x4EF6;"></a>4&#x3001;&#x5E38;&#x7528;&#x7684;Gulp&#x63D2;&#x4EF6;</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-自动加载插件"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text"><a href="#4-1-&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;" class="headerlink" title="4.1 &#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;"></a>4.1 &#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x63D2;&#x4EF6;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-重命名"><span class="post-toc-number">2.4.2.</span> <span class="post-toc-text"><a href="#4-2-&#x91CD;&#x547D;&#x540D;" class="headerlink" title="4.2 &#x91CD;&#x547D;&#x540D;"></a>4.2 &#x91CD;&#x547D;&#x540D;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-js文件压缩"><span class="post-toc-number">2.4.3.</span> <span class="post-toc-text"><a href="#4-3-js&#x6587;&#x4EF6;&#x538B;&#x7F29;" class="headerlink" title="4.3 js&#x6587;&#x4EF6;&#x538B;&#x7F29;"></a>4.3 js&#x6587;&#x4EF6;&#x538B;&#x7F29;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-4-css文件压缩"><span class="post-toc-number">2.4.4.</span> <span class="post-toc-text"><a href="#4-4-css&#x6587;&#x4EF6;&#x538B;&#x7F29;" class="headerlink" title="4.4 css&#x6587;&#x4EF6;&#x538B;&#x7F29;"></a>4.4 css&#x6587;&#x4EF6;&#x538B;&#x7F29;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-5-html文件压缩"><span class="post-toc-number">2.4.5.</span> <span class="post-toc-text"><a href="#4-5-html&#x6587;&#x4EF6;&#x538B;&#x7F29;" class="headerlink" title="4.5 html&#x6587;&#x4EF6;&#x538B;&#x7F29;"></a>4.5 html&#x6587;&#x4EF6;&#x538B;&#x7F29;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-6-js代码检查"><span class="post-toc-number">2.4.6.</span> <span class="post-toc-text"><a href="#4-6-js&#x4EE3;&#x7801;&#x68C0;&#x67E5;" class="headerlink" title="4.6 js&#x4EE3;&#x7801;&#x68C0;&#x67E5;"></a>4.6 js&#x4EE3;&#x7801;&#x68C0;&#x67E5;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-7-文件合并"><span class="post-toc-number">2.4.7.</span> <span class="post-toc-text"><a href="#4-7-&#x6587;&#x4EF6;&#x5408;&#x5E76;" class="headerlink" title="4.7 &#x6587;&#x4EF6;&#x5408;&#x5E76;"></a>4.7 &#x6587;&#x4EF6;&#x5408;&#x5E76;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-8-less和sass的编译"><span class="post-toc-number">2.4.8.</span> <span class="post-toc-text"><a href="#4-8-less&#x548C;sass&#x7684;&#x7F16;&#x8BD1;" class="headerlink" title="4.8 less&#x548C;sass&#x7684;&#x7F16;&#x8BD1;"></a>4.8 less&#x548C;sass&#x7684;&#x7F16;&#x8BD1;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-9-图片压缩"><span class="post-toc-number">2.4.9.</span> <span class="post-toc-text"><a href="#4-9-&#x56FE;&#x7247;&#x538B;&#x7F29;" class="headerlink" title="4.9 &#x56FE;&#x7247;&#x538B;&#x7F29;"></a>4.9 &#x56FE;&#x7247;&#x538B;&#x7F29;</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-10-自动刷新"><span class="post-toc-number">2.4.10.</span> <span class="post-toc-text"><a href="#4-10-&#x81EA;&#x52A8;&#x5237;&#x65B0;" class="headerlink" title="4.10 &#x81EA;&#x52A8;&#x5237;&#x65B0;"></a>4.10 &#x81EA;&#x52A8;&#x5237;&#x65B0;</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-前端自动化构建工具-GulpJs的使用介绍"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端自动化构建工具--GulpJs的使用介绍</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月04日 11:10" datetime="2018-01-04T03:10:11.391Z"  itemprop="datePublished">2018-01-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/blog/categories/Gulp/">Gulp</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><a href="http://www.gulpjs.com.cn/" target="_blank" rel="noopener">GulpJs</a>是一个前端自动化构建工具，与GruntJs相比，GulpJs无需繁杂的 配置参数，API简单易用，学习成本低。并依赖NodeJs的读取操作接口执行速度更快。适合新手没有学习过自动化构建工具的开发者。</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="1、Gulp的安装"><a href="#1、Gulp的安装" class="headerlink" title="1、Gulp的安装"></a>1、Gulp的安装</h2><p>确保已经安装Node、npm最新版，然后全局安装Gulp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g gulp</span><br></pre></td></tr></table></figure>
+<p>全局安装完成后，还需要在相应的项目中单独安装一次，并安装为项目依赖，切换到项目目录下，执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> gulp-test/</span><br><span class="line">npm install --save-dev gulp</span><br></pre></td></tr></table></figure>
+<h2 id="2、开始使用Gulp"><a href="#2、开始使用Gulp" class="headerlink" title="2、开始使用Gulp"></a>2、开始使用Gulp</h2><h3 id="2-1-建立-gulpfile-js-文件"><a href="#2-1-建立-gulpfile-js-文件" class="headerlink" title="2.1 建立 gulpfile.js 文件"></a>2.1 建立 gulpfile.js 文件</h3><p>新建文件，存放到项目的根目录中，之后在文件中定义任务，以下为官方文档的简单默认任务实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 将你的默认的任务代码放在这</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-运行-Gulp-任务"><a href="#2-2-运行-Gulp-任务" class="headerlink" title="2.2 运行 Gulp 任务"></a>2.2 运行 Gulp 任务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 语法：</span></span><br><span class="line"><span class="comment"># gulp &lt;task&gt; &lt;othertask&gt;</span></span><br><span class="line"><span class="comment"># 默认执行为 gulp === gulp default</span></span><br><span class="line">$ gulp</span><br></pre></td></tr></table></figure>
+<h2 id="3、Gulp的API介绍"><a href="#3、Gulp的API介绍" class="headerlink" title="3、Gulp的API介绍"></a>3、Gulp的API介绍</h2><p>使用Gulp，仅需要4个API：==gulp.task()== , ==gulp.src()== , ==gulp.dest()== , ==gulp.watch()== ，容易掌握。官方API文档：<a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="noopener">http://www.gulpjs.com.cn/docs/api/</a> </p>
+<h3 id="3-1-gulp-src"><a href="#3-1-gulp-src" class="headerlink" title="3.1 gulp.src()"></a>3.1 gulp.src()</h3><p>Gulp中，使用的是Nodejs中的stream(流)，首先获取到需要的stream，然后可以通过stream的 ==pipe()== 方法把流导入到你想要的地方。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 语法</span><br><span class="line">gulp.src(globs[, options]);</span><br></pre></td></tr></table></figure>
+<p>globs </p>
+<p>参数是文件匹配模式(类似正则表达式)，用来匹配文件路径(包括文件名)，当然这里也可以直接指定某个具体的文件路径。当有多个匹配模式时，该参数可以为一个数组。</p>
+<p>options </p>
+<p>为可选参数。通常情况下我们不需要用到。详细见官方文档</p>
+<h3 id="3-2-gulp-dest"><a href="#3-2-gulp-dest" class="headerlink" title="3.2 gulp.dest()"></a>3.2 gulp.dest()</h3><p>该方法用来写文件，语法为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp.dest(path[,options])</span><br></pre></td></tr></table></figure>
+<p>path</p>
+<p>为写入文件的路径</p>
+<p>options</p>
+<p>为一个可选的参数对象，通常我们不需要用到</p>
+<h3 id="3-3-gulp-task"><a href="#3-3-gulp-task" class="headerlink" title="3.3 gulp.task()"></a>3.3 gulp.task()</h3><p>方法用来定义任务，内部使用的是Orchestrator，其语法为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(name[, deps], fn)</span><br></pre></td></tr></table></figure>
+<p>name</p>
+<p>任务名</p>
+<p>deps</p>
+<p>是当前定义的任务需要依赖的其他任务，为一个数组。当前定义的任务会在所有依赖的任务执行完毕后才开始执行。如果没有依赖，则可省略这个参数</p>
+<p>fn</p>
+<p>为任务函数，我们把任务要执行的代码都写在里面。该参数也是可选的。</p>
+<h3 id="3-4-gulp-watch"><a href="#3-4-gulp-watch" class="headerlink" title="3.4 gulp.watch()"></a>3.4 gulp.watch()</h3><p>用来监视文件的变化，当文件发生变化后，我们可以利用它来执行相应的任务，例如文件压缩等。其语法为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 1</span><br><span class="line">gulp.watch(glob[, opts], tasks)</span><br></pre></td></tr></table></figure>
+<p>glob </p>
+<p>为要监视的文件匹配模式，规则和用法与gulp.src()方法中的glob相同。</p>
+<p>opts </p>
+<p>为一个可选的配置对象，通常不需要用到</p>
+<p>tasks </p>
+<p>为文件变化后要执行的任务，为一个数组</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 2</span><br><span class="line">gulp.watch(glob[, opts, cb])</span><br></pre></td></tr></table></figure>
+<p>glob和opts参数与第一种用法相同</p>
+<p>cb</p>
+<p>参数为一个函数。每当监视的文件发生变化时，就会调用这个函数,并且会给它传入一个对象，该对象包含了文件变化的一些信息，type属性为变化的类型，可以是added,changed,deleted；path属性为发生变化的文件的路径</p>
+<h2 id="4、常用的Gulp插件"><a href="#4、常用的Gulp插件" class="headerlink" title="4、常用的Gulp插件"></a>4、常用的Gulp插件</h2><p>HTML文件实时浏览、文件压缩、文件编译</p>
+<h3 id="4-1-自动加载插件"><a href="#4-1-自动加载插件" class="headerlink" title="4.1 自动加载插件"></a>4.1 自动加载插件</h3><p>使用：gulp-load-plugins</p>
+<p>安装：npm install –save-dev gulp-load-plugins</p>
+<h3 id="4-2-重命名"><a href="#4-2-重命名" class="headerlink" title="4.2 重命名"></a>4.2 重命名</h3><p>使用gulp-rename</p>
+<p>安装：npm install –save-dev gulp-rename</p>
+<h3 id="4-3-js文件压缩"><a href="#4-3-js文件压缩" class="headerlink" title="4.3 js文件压缩"></a>4.3 js文件压缩</h3><p>使用gulp-uglify</p>
+<p>安装：npm install –save-dev gulp-uglify</p>
+<h3 id="4-4-css文件压缩"><a href="#4-4-css文件压缩" class="headerlink" title="4.4 css文件压缩"></a>4.4 css文件压缩</h3><p>使用gulp-minify-css</p>
+<p>安装：npm install –save-dev gulp-minify-css</p>
+<h3 id="4-5-html文件压缩"><a href="#4-5-html文件压缩" class="headerlink" title="4.5 html文件压缩"></a>4.5 html文件压缩</h3><p>使用gulp-minify-html</p>
+<p>安装：npm install –save-dev gulp-minify-html</p>
+<h3 id="4-6-js代码检查"><a href="#4-6-js代码检查" class="headerlink" title="4.6 js代码检查"></a>4.6 js代码检查</h3><p>使用gulp-jshint</p>
+<p>安装：npm install –save-dev gulp-jshint</p>
+<h3 id="4-7-文件合并"><a href="#4-7-文件合并" class="headerlink" title="4.7 文件合并"></a>4.7 文件合并</h3><p>使用：gulp-concat</p>
+<p>安装：npm install –save-dev gulp-concat</p>
+<h3 id="4-8-less和sass的编译"><a href="#4-8-less和sass的编译" class="headerlink" title="4.8 less和sass的编译"></a>4.8 less和sass的编译</h3><p>less使用：gulp-less</p>
+<p>安装：npm install –save-dev gulp-less</p>
+<p>sass使用：gulp-sass</p>
+<p>安装：npm install –save-dev gulp-sass</p>
+<h3 id="4-9-图片压缩"><a href="#4-9-图片压缩" class="headerlink" title="4.9 图片压缩"></a>4.9 图片压缩</h3><p>使用：gulp-imagemin 插件来压缩jpg、png、gif等图片</p>
+<p>安装：npm install –save-dev gulp-imagemin</p>
+<h3 id="4-10-自动刷新"><a href="#4-10-自动刷新" class="headerlink" title="4.10 自动刷新"></a>4.10 自动刷新</h3><p>使用：gulp-livereload</p>
+<p>安装：npm install –save-dev gulp-livereload</p>
+<p>使用方法：安装完成后，需要谷歌浏览器的配合，安装谷歌浏览器插件 <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei" target="_blank" rel="noopener">LiveReload</a></p>
+<p>参考Blog：<a href="http://www.cnblogs.com/2050/p/4198792.html" target="_blank" rel="noopener">http://www.cnblogs.com/2050/p/4198792.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-04T03:12:54.964Z" itemprop="dateUpdated">2018年1月4日 11:12</time>
+</span><br>
+
+
+        所属：<a href="/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/" target="_blank" rel="external">http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/</a>
+    </div>
+    <footer>
+        <a href="http://gavinluo.cn/blog">
+            <img src="/blog/img/avatar.jpg" alt="Shiming.Luo">
+            Shiming.Luo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&title=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&title=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/04/CRTB/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/04/使用-Graphics-创建图片并保存本地/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Null. &copy; 2017 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&title=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&title=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端自动化构建工具--GulpJs的使用介绍》 — Null.&url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/04/前端自动化构建工具-GulpJs的使用介绍/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJElEQVR42u3aQY7jMAwEwPz/09kHzEbpphzAUcqnYOG1VJpDg6Qej/h5/nnW7yRfy3+v/yVZcfhgY2Njfwn7uXzWC6zfnPGSA13/XluwsbGxT2XnMbNeLI+uFrY++tyCjY2NjZ2EWfIk4J2YxMbGxsZut9KWGbNy4ha5jY2NjX1LdhIzs2CbReCM9JFeGjY2Nvbt2flU9P6/PzLfxsbGxr4xe9YGmh1TUpYkzaMLmlnY2NjYB7F3Ls3sNIB22vo7A2ZsbGzs89jrj+YLtwGWRGMyEs6D8LGDxMbGxr49uw2epCnfMlpMPoR+mdjY2NjYB7HbwJhd38kPIm9XzVbBxsbGPo/djgTyUUEee7MB8ywOsbGxsU9ltyOBnQZ9st2k2GiPGBsbG/t32DNqEoRt+O2ULi//JNjY2NgHsfPmex4P+43+/UHC1mwEGxsb+6vY+3Hy6Ss4bS8oWgsbGxv7aHa7ufy6z+fiMB8n1FUONjY29u3ZyX9oW/yzyBk2+rePCRsbG/vb2XmbZj9UrrqymQfVm1IEGxsb+wh2Xk7MSovZoPdZPm1jCxsbG/sk9uwizuxiTdtOylfPC5Wt+0fY2NjYN2bvt+z3hwqzwqb9zn8qMGxsbOwvZ7eD27y0yEuR2bC2uKCDjY2N/WPstiSYLTBrXc0uCWFjY2P/Ant/EJu379urOck4YXjdBxsbG/sI9myMOhsn5O+3JVBSDtWTZGxsbOyvZc9GtnnU5QXJ7JvRd7CxsbGPZq83kWOuutbT7i06GmxsbOyD2LODyJtB7Zt5dA1HudjY2NiHsvNl2ms9+6OCaxtM2NjY2L/Abje9EyTtdq/aGzY2Nvap7DoARu/kgGsrrZdDAmxsbOwvZz/LZ3Z9Z2eo0BYnUYmCjY2NfRB7J/fydlJbbLSlS07dGgBjY2Nj35g9a+jvAGZfaAPsTUxiY2NjH8duA2O9TDuabcfA7SFiY2NjY88CLA+haI5RFiFv9oONjY398+xPDGXbAcNstIyNjY19Krsd7rZbyQMpv76THPoFvTRsbGzs27Nn0ZIHRnu9Jg/FdpyAjY2NfRz7H2gYxHDG+/H5AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '看不懂？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '懂了？';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

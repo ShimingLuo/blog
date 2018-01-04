@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>No title | Null. | 善战者，不武。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="js使用Array.prototype.sort()对数组对象排序的方法：    我们先来简单的了解一下Array.prototype.sort()。sort方法接受一个参数——Function，function会提供两个参 数，分别是两个进行比较的元素，如果元素是String类型则通过Unicode code进行比较，如果是Number类型则比较值的大小。如果比较的函数中返回1则两个元素交换位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="No title">
+<meta property="og:url" content="http://gavinluo.cn/blog/2018/01/04/javascript数组排序/index.html">
+<meta property="og:site_name" content="Null.">
+<meta property="og:description" content="js使用Array.prototype.sort()对数组对象排序的方法：    我们先来简单的了解一下Array.prototype.sort()。sort方法接受一个参数——Function，function会提供两个参 数，分别是两个进行比较的元素，如果元素是String类型则通过Unicode code进行比较，如果是Number类型则比较值的大小。如果比较的函数中返回1则两个元素交换位置">
+<meta property="og:locale" content="简体中文">
+<meta property="og:updated_time" content="2018-01-04T03:12:54.964Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="No title">
+<meta name="twitter:description" content="js使用Array.prototype.sort()对数组对象排序的方法：    我们先来简单的了解一下Array.prototype.sort()。sort方法接受一个参数——Function，function会提供两个参 数，分别是两个进行比较的元素，如果元素是String类型则通过Unicode code进行比较，如果是Number类型则比较值的大小。如果比较的函数中返回1则两个元素交换位置">
+    
+        <link rel="alternative" href="/atom.xml" title="Null." type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/blog/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/blog/img/brand.jpg)">
+      <div class="brand">
+        <a href="/blog/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/blog/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Shiming.Luo</h5>
+          <a href="mailto:gavinluo99@gmail.com" title="gavinluo99@gmail.com" class="mail">gavinluo99@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/blog/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                新浪微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                知乎
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/gitfuck99" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                GitOschina(码云)
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ShimingLuo" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                GitHub
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://www.facebook.com/ShimingLuo99" target="_blank" >
+                <i class="icon icon-lg icon-facebook"></i>
+                FaceBook
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://twitter.com/gavinluo99" target="_blank" >
+                <i class="icon icon-lg icon-twitter"></i>
+                Twitter
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis"></div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title"></h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-04T03:10:11.386Z" itemprop="datePublished" class="page-time">
+  2018-01-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-javascript数组排序"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title"></h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月04日 11:10" datetime="2018-01-04T03:10:11.386Z"  itemprop="datePublished">2018-01-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>js使用Array.prototype.sort()对数组对象排序的方法：<br>    我们先来简单的了解一下Array.prototype.sort()。sort方法接受一个参数——Function，function会提供两个参 数，分别是两个进行比较的元素，如果元素是String类型则通过Unicode code进行比较，如果是Number类型则比较值的大小。如果比较的函数中返回1则两个元素交换位置，0和-1不交换位置。先看一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [3, 5, 2, 1];</span><br><span class="line">// 从小到大排序</span><br><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return a &gt; b ? 1 : -1;</span><br><span class="line">&#125;);</span><br><span class="line">// 得到的结果：[1, 2, 3, 5]</span><br></pre></td></tr></table></figure>
+<p>如果是对一个数组对象进行排序，该怎么写呢？其实原理和上面一样，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var arr = [</span><br><span class="line">    &#123; a : 2, b : 3.2&#125;,</span><br><span class="line">    &#123; a : 3, b : 1.2&#125;,</span><br><span class="line">    &#123; a : 4, b : 2.2&#125;,</span><br><span class="line">    &#123; a : 6, b : 1.2&#125;,</span><br><span class="line">    &#123; a : 5, b : 3.2&#125;</span><br><span class="line">]</span><br><span class="line">/// 从小到大按属性b排序</span><br><span class="line">arr.sort(function(x, y)&#123;</span><br><span class="line">    return x.b &gt; y.b ? 1:-1;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>上面的例子中，最小的元素中有重复，如果需求是：先按b属性从小到大排序，如果最小中有重复则再按a属性排序，那应该怎么写呢？</p>
+<p>在排序的时候，先按b属性排序，如果x.b的大于y.b则将x移到y的右边，如果x.b等于y.b则再通过x.a和y.a进行比较，所以代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (x, y) &#123;</span><br><span class="line">    if (x.b &gt; y.b) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125; else if (x.b === y.b) &#123;</span><br><span class="line">        return x.a &gt; y.a ? 1 : -1;</span><br><span class="line">    &#125; else if (x.b &lt; y.b) &#123;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-04T03:12:54.964Z" itemprop="dateUpdated">2018年1月4日 11:12</time>
+</span><br>
+
+
+        所属：<a href="/blog/2018/01/04/javascript数组排序/" target="_blank" rel="external">http://gavinluo.cn/blog/2018/01/04/javascript数组排序/</a>
+    </div>
+    <footer>
+        <a href="http://gavinluo.cn/blog">
+            <img src="/blog/img/avatar.jpg" alt="Shiming.Luo">
+            Shiming.Luo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&title=Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&title=Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Null.&url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/blog/2018/01/04/java绘制坐标系统库/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[no title]</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/blog/2018/01/04/NodeJs连接MySQL数据库/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">NodeJs链接MySQL数据库</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Null. &copy; 2017 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&title=《No title》 — Null.&pic=http://gavinluo.cn/blog/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&title=《No title》 — Null.&source=Null,blog,无聊,有趣,有料" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《No title》 — Null.&url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/&via=http://gavinluo.cn/blog" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://gavinluo.cn/blog/2018/01/04/javascript数组排序/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aUY6DMAwFQO5/afYALejZga0wk6+qWyUZVjJ24m2Lx/4xPv969PveKtsdAwMD47GM/XQcLbCyxfMHcbTu+QwYGBhvYBwtfP65GjSrW0zmwcDAwDhfvsc+nwEDAwPjjoCbhMvqbzAwMDB6RWyyoepD+UEtjoGB8UBGflj2/59vud/AwMB4FGMvjl5qmITIPMh+mRMDA2M0Iw9wvbQv2Vwv4GJgYLyNsd5hdUeoLWwXAwPjNYw8CK4c6993hYCBgTGbsRIQ8/aLFcwFGS4GBsYIRu8KM0koq1vvPQIMDIypjDyZu+ow7vz7PJQXsloMDIwRjF8d/fcK4C/fYGBgjGYkCdkdzRPVoBxdGGBgYAxl9I66qtcDeaGbp4nR/wEDA2MQo9dIkTdnXHXxUOgNwcDAGM3IJ8pbuPLw2iyDMTAwXsnoHYHl15PVC8stv5fAwMAYzVhKzlqbKzd+Hc2JgYExmrFe3F51wVm92my+TzAwMB7LWL+k7DWHXdW0gYGB8R5G9Vi/Gnbz4rZaAGNgYLyH0fuml4EmB3nl0hcDA2MoYy+OPJiuh+OLk0IMDIzHMvKRp4y9Fo28uC2fHWJgYIxg9IJsknVWE8Q84JbfHhgYGCMYvQOvaqNYtS2jXMpiYGBgxBvNA3E1vB6CMTAwMIppXzV09kroy94bGBgYD2EkRezK0dhS2pc8AgwMjNGMfIHkiD9vJqtuoteigYGB8XDGH4l8slAaO8N+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/blog/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '看不懂？';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '懂了？';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
